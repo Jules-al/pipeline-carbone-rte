@@ -1,0 +1,25 @@
+# Environnements Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Variables d'environnement et identifiants
+.env
+*service-account*.json
+*credentials*.json
+
+# Données extraites (régénérables via extract_eco2mix.py, ne pas versionner)
+data/
+extraction/data/
+*.parquet
+
+# Fichiers d'IDE
+.vscode/
+.idea/
+.dist
+
+# dbt (à activer une fois le projet dbt initialisé)
+target/
+dbt_packages/
+logs/

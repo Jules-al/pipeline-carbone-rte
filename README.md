@@ -8,7 +8,7 @@ Le mix électrique français varie fortement selon l'heure (nucléaire, éolien,
  
  ## Architecture
  
-```
+
 API RTE éCO2mix (ODRÉ)
         &darr
   Extraction (Python)
@@ -18,7 +18,7 @@ API RTE éCO2mix (ODRÉ)
   dbt (staging → intermediate → marts)
         &darr
   Dashboard (Looker Studio)
-```
+
 
 ## Stack
  

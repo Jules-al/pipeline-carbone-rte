@@ -1,4 +1,4 @@
-## pipeline-carbone-rte : QUand consommer pour réduire son empreinte carbone
+## pipeline-carbone-rte : Quand consommer pour réduire son empreinte carbone
 
 Pipeline ELT qui suit l'intensité carbone du réseau électrique français en temps réel, pour identifier les meilleures heures pour consommer de l'électricité (recharge véhicule, électroménager, pilotage énergétique).
  
@@ -10,13 +10,13 @@ Le mix électrique français varie fortement selon l'heure (nucléaire, éolien,
  
 ```
 API RTE éCO2mix (ODRÉ)
-        ↓
+        &darr
   Extraction (Python)
-        ↓
+        &darr
   BigQuery (raw)
-        ↓
+        &darr
   dbt (staging → intermediate → marts)
-        ↓
+        &darr
   Dashboard (Looker Studio)
 ```
 

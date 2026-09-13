@@ -1,5 +1,13 @@
 ## pipeline-carbone-rte : Quand consommer pour réduire son empreinte carbone
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat&logo=dbt&logoColor=white)
+![BigQuery](https://img.shields.io/badge/BigQuery-4285F4?style=flat&logo=googlebigquery&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat&logo=googlecloud&logoColor=white)
+![Looker Studio](https://img.shields.io/badge/Looker_Studio-4285F4?style=flat&logo=looker&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
+
 Pipeline ELT qui suit l'intensité carbone du réseau électrique français en temps réel, pour identifier les meilleures heures pour consommer de l'électricité (recharge véhicule, électroménager, pilotage énergétique).
  
 ## Le problème
@@ -8,17 +16,17 @@ Le mix électrique français varie fortement selon l'heure (nucléaire, éolien,
  
  ## Architecture
  
-
+```
 API RTE éCO2mix (ODRÉ)
-        &darr
+        |
   Extraction (Python)
-        &darr
+        |
   BigQuery (raw)
-        &darr
+        |
   dbt (staging → intermediate → marts)
-        &darr
+        |
   Dashboard (Looker Studio)
-
+```
 
 ## Stack
  

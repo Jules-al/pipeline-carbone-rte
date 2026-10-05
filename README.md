@@ -1,4 +1,4 @@
-## pipeline-carbone-rte : Quand consommer pour réduire son empreinte carbone
+## pipeline-carbone-rte : réduire son empreinte carbone
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat&logo=dbt&logoColor=white)
@@ -53,7 +53,7 @@ python extraction/extract_eco2mix.py --dest bigquery \
 ## État du projet
  
 - [x] Script d'extraction (API RTE → local / BigQuery)
-- [ ] Modélisation dbt (staging, intermediate, marts)
+- [] Modélisation dbt (staging, intermediate, marts)
 - [ ] Dashboard Looker Studio
 - [ ] Orchestration automatisée
 ## Auteur

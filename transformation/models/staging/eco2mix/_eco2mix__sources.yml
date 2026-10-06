@@ -1,0 +1,9 @@
+version: 2
+sources:
+  - name: eco2mix
+    description : Données brutes éco2mix (RTE/ODRÉ) chargées par extraction/extract_eco2mix.py
+    database: projets-498521
+    schema: pipeline_rte
+    tables:
+      - name: eco2mix_national
+        description: Mesures temps du réel du réseau électrique national, au pas de 15 minutes. 

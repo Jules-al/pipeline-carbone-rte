@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_eco2mix__mesures
+    description: Mesures éCO2mix nettoyées, une ligne par quart d'heure mesuré, sans doublon.
+    columns:
+      - name: horodatage_utc
+        description: Début du quart d'heure, en UTC. Clé primaire.
+        data_tests:
+          - unique
+          - not_null
+      - name: horodatage_paris
+        description: Début du quart d'heure, en heure locale française.
+        data_tests:
+          - not_null
+      - name: intensite_co2_g_kwh
+        description: Intensité carbone de l'électricité produite en France (gCO2eq/kWh).
+        data_tests:
+          - not_null
+      - name: consommation_mw
+        description: Consommation nationale (MW).
+        data_tests:
+          - not_null

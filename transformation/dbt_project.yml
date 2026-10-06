@@ -1,0 +1,19 @@
+name : 'pipeline_carbone_rte'
+version : '1.0.0'
+profile : 'pipeline_carbone_rte'
+
+model-paths : ["models"]
+test-paths : ["tests"]
+macro-paths : ["macros"]
+
+
+clean-targets : ["target", "dbt_packages"]
+
+models:
+  pipeline_carbone_rte:
+    staging:
+      +materialized : view
+    intermediate :
+      +materialized : view
+    marts : 
+      +materialized : table

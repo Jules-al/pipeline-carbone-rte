@@ -53,7 +53,7 @@ python extraction/extract_eco2mix.py --dest bigquery \
 ## État du projet
  
 - [x] Script d'extraction (API RTE → local / BigQuery)
-- [] Modélisation dbt (staging, intermediate, marts)
+- [x] Modélisation dbt (staging, intermediate, marts)
 - [ ] Dashboard Looker Studio
 - [ ] Orchestration automatisée
 ## Auteur

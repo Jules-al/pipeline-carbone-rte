@@ -1,0 +1,29 @@
+models:
+  - name: fct_intensite_carbone_horaire
+    description: Intensité carbone et mix de production par heure (heures complètes uniquement).
+    columns:
+      - name: heure_utc
+        description: Début de l'heure, en UTC. Clé primaire.
+        data_tests:
+          - unique
+          - not_null
+      - name: rang_dans_la_journee
+        description: Classement de l'heure dans sa journée (1 = la moins carbonée).
+
+  - name: mart_heures_optimales
+    description: Profil moyen d'intensité carbone par jour de semaine et par heure, avec les 3 meilleures heures de chaque jour.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - jour_semaine_num
+              - heure_de_la_journee
+    columns:
+      - name: intensite_moyenne_g_kwh
+        description: Intensité carbone moyenne observée sur ce créneau (gCO2eq/kWh).
+        data_tests:
+          - not_null
+      - name: est_heure_recommandee
+        description: Vrai si le créneau fait partie des 3 heures les moins carbonées de ce jour de la semaine.
+      - name: ecart_vs_moyenne_du_jour
+        description: Écart relatif par rapport à la moyenne du jour (-0.25 = 25 % moins carboné).

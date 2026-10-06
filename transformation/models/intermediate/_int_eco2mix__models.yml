@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: int_eco2mix__horaire
+    description: Mesures agrégées à l'heure, enrichies du calendrier (heure de Paris) et du mix de production.
+    columns:
+      - name: heure_utc
+        description: Début de l'heure, en UTC. Clé primaire.
+        data_tests:
+          - unique
+          - not_null
+      - name: nb_quarts_heure
+        description: Nombre de quarts d'heure mesurés dans l'heure (4 si l'heure est complète).
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 4
+      - name: jour_semaine_num
+        description: Jour de la semaine, de 1 (lundi) à 7 (dimanche).
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1
+                max_value: 7
+      - name: part_fossile
+        description: Part du gaz, du charbon et du fioul dans la production.
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
